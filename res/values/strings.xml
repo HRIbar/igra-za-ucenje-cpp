@@ -7,5 +7,11 @@
     <string name="title_activity_score">ScoreActivity</string>
     <string name="title_activity_ingame">IngameActivity</string>
     <string name="title_activity_instructions">InstructionsActivity</string>
-
+	<string name="gumbA">A</string>
+	<string name="gumbB">B</string>
+	<string name="gumbC">C</string>
+	<string name="gumbD">D</string>
+	<string name="pravilno">Pravilno!</string>
+	<string name="narobe">Narobe!</string>
+	<string name="tocke">0</string>
 </resources>

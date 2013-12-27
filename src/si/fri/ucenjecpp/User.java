@@ -13,4 +13,9 @@ public class User {
 	//Delete this if not needed.
 	static int timeleft;
 	
+	User(){
+		
+		
+	}
+	
 }
