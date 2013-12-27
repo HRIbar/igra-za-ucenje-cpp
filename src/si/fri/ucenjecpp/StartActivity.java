@@ -36,6 +36,7 @@ public class StartActivity extends Activity{
 		         gumbStart.setBackgroundColor(color.white);
 		         Intent userActivity = new Intent(getApplicationContext(), InputUserActivity.class);
 		         startActivity(userActivity);
+		         finish();
 		    }
 		});
 		
@@ -47,6 +48,7 @@ public class StartActivity extends Activity{
 		    	// Fix the coloring of the button when pressed
 		         //gumbExit.setBackgroundColor(color.white);
 		         StartActivity.this.finish();
+		         
 		    }
 		});
 		
@@ -57,6 +59,7 @@ public class StartActivity extends Activity{
 		         //gumbScore.setBackgroundColor(color.white);
 		         Intent scoreActivity = new Intent(getApplicationContext(), ScoreActivity.class);
 		         startActivity(scoreActivity);
+		         finish();
 		    }
 		});
 		
@@ -67,6 +70,7 @@ public class StartActivity extends Activity{
 		         //gumbScore.setBackgroundColor(color.white);
 		         Intent instruActivity = new Intent(getApplicationContext(),InstructionsActivity.class);
 		         startActivity(instruActivity);
+		         finish();
 		    }
 		});
 		

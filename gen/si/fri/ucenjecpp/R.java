@@ -37,15 +37,21 @@ public final class R {
         public static final int vprasanje9a=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f080013;
-        public static final int buIzhod=0x7f080011;
-        public static final int buNavodila=0x7f080010;
+        public static final int action_settings=0x7f080019;
+        public static final int buIzhod=0x7f080017;
+        public static final int buNavodila=0x7f080016;
         public static final int buOk=0x7f08000b;
-        public static final int buRezultati=0x7f080012;
-        public static final int buZacni=0x7f08000f;
+        public static final int buRezultati=0x7f080018;
+        public static final int buZacni=0x7f080015;
+        public static final int button1=0x7f08000f;
+        public static final int button2=0x7f080010;
+        public static final int button3=0x7f080011;
+        public static final int button4=0x7f080013;
         public static final int buttonA=0x7f080008;
         public static final int buttonB=0x7f080007;
         public static final int buttonC=0x7f08000a;
+        public static final int editTextNavodila=0x7f080012;
+        public static final int editTextRezultati=0x7f080014;
         public static final int etVnosvzdevka=0x7f08000c;
         public static final int imageView1=0x7f080009;
         public static final int sekunde=0x7f080005;
@@ -81,11 +87,13 @@ public final class R {
         public static final int gumbD=0x7f050009;
         public static final int hello_world=0x7f050002;
         public static final int narobe=0x7f05000b;
+        public static final int potekel=0x7f05000e;
         public static final int pravilno=0x7f05000a;
         public static final int title_activity_ingame=0x7f050004;
         public static final int title_activity_instructions=0x7f050005;
         public static final int title_activity_score=0x7f050003;
         public static final int tocke=0x7f05000c;
+        public static final int zacetek=0x7f05000d;
     }
     public static final class style {
         /** 

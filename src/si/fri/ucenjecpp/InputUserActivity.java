@@ -32,6 +32,9 @@ public class InputUserActivity extends Activity {
 		    	
 		        Intent Ingame = new Intent(getApplicationContext(), IngameActivity.class);
 		        startActivity(Ingame);
+		        finish();
+		        
+		       
 		    }
 		});
 		

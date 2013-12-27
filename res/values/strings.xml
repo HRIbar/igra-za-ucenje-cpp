@@ -14,4 +14,6 @@
 	<string name="pravilno">Pravilno!</string>
 	<string name="narobe">Narobe!</string>
 	<string name="tocke">0</string>
+	<string name="zacetek">Na zacetek</string>
+	<string name="potekel">Vas cas je potekel!\nGame Over :)</string>
 </resources>
