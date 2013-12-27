@@ -1,7 +1,11 @@
 package si.fri.ucenjecpp;
 
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Random;
 import java.util.Timer;
@@ -83,7 +87,8 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				NastaviSliko();
 				}
 			else{
-				writeToFile(nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				String rezultatiText = readFromFile();
+				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 			adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
 			adb.show();
@@ -110,7 +115,8 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				NastaviSliko();
 				}
 			else{
-				writeToFile(nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				String rezultatiText = readFromFile();
+				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 			adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
 			adb.show();
@@ -137,7 +143,8 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				NastaviSliko();
 				}
 			else{
-				writeToFile(nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				String rezultatiText = readFromFile();
+				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 			adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
 			adb.show();
@@ -160,6 +167,36 @@ public class IngameActivity extends Activity implements OnClickListener  {
 		pravilen = Character.toString(imageArray[index].charAt(imageArray[index].length()-1)); //nastavi pravilen odgovr
 		int resID = getResources().getIdentifier(imageArray[index], "drawable",  getPackageName());
 		img.setImageResource(resID);
+	}
+	
+	private String readFromFile() {
+
+	    String ret = "";
+
+	    try {
+	        InputStream inputStream = openFileInput("rezultati.txt");
+
+	        if ( inputStream != null ) {
+	            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+	            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+	            String receiveString = "";
+	            StringBuilder stringBuilder = new StringBuilder();
+
+	            while ( (receiveString = bufferedReader.readLine()) != null ) {
+	                stringBuilder.append(receiveString+"\n");
+	            }
+
+	            inputStream.close();
+	            ret = stringBuilder.toString();
+	        }
+	    }
+	    catch (FileNotFoundException e) {
+	        Log.e("login activity", "File not found: " + e.toString());
+	    } catch (IOException e) {
+	        Log.e("login activity", "Can not read file: " + e.toString());
+	    }
+
+	    return ret;
 	}
 	
 	public void NovaAktivnost(Class cls){
@@ -209,7 +246,8 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			    		 * because the game is over - timeleft = 0!
 			    		 */
 			    		AlertDialog("Vas cas je potekel\nGame Over :)"); //mogoce se komu to zdi primitivno?
-						
+			    		String rezultatiText = readFromFile();
+						writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
 						NovaAktivnost(ScoreActivity.class);
 						finish();
 			    	}
