@@ -84,7 +84,8 @@
         android:layout_alignBaseline="@+id/buttonA"
         android:layout_alignBottom="@+id/buttonA"
         android:layout_toRightOf="@+id/buttonA"
-        android:text="@string/gumbB" />
+        android:text="@string/gumbB"
+        android:onClick="onClick" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -102,15 +103,17 @@
         android:layout_alignBaseline="@+id/buttonB"
         android:layout_alignBottom="@+id/buttonB"
         android:layout_toRightOf="@+id/buttonB"
-        android:text="@string/gumbC" />
+        android:text="@string/gumbC"
+        android:onClick="onClick" />
 
     <Button
         android:id="@+id/buttonA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView5"
-        android:layout_marginBottom="48dp"
-        android:layout_toLeftOf="@+id/uporabnik"
-        android:text="@string/gumbA" />
+        android:layout_alignRight="@+id/textView1"
+        android:layout_marginBottom="14dp"
+        android:text="@string/gumbA"
+        android:onClick="onClick" />
 
 </RelativeLayout>

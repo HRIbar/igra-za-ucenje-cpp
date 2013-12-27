@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.annotation.SuppressLint;
@@ -12,12 +13,13 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 @SuppressLint("NewApi")
-public class IngameActivity extends Activity {
+public class IngameActivity extends Activity implements OnClickListener  {
 	TextView editNickname, editTocke, editSekunde;
 	int timeLeft = 30;
 	int tocke;
@@ -163,6 +165,8 @@ public class IngameActivity extends Activity {
 			});
 			
         }
-    }     
+    }
+
+   
 
 }
