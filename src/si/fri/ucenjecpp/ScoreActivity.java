@@ -5,9 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -16,7 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 
 public class ScoreActivity extends Activity implements OnClickListener {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,9 +37,20 @@ public class ScoreActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		Intent i = new Intent(this, StartActivity.class);
-		startActivity(i);
-		finish();
+		switch(v.getId()){
+		case R.id.button1:
+			Intent i = new Intent(this, StartActivity.class);
+			startActivity(i);
+			finish();
+		break;
+		
+		case R.id.button2:
+			EditText TextRezultati = (EditText) this.findViewById(R.id.editTextRezultati);
+			writeToFile("");
+			TextRezultati.setText("");
+		
+		}
+		
 		
 	}
 	
@@ -69,6 +82,17 @@ public class ScoreActivity extends Activity implements OnClickListener {
 	    }
 
 	    return ret;
+	}
+	
+	private void writeToFile(String data) {
+	    try {
+	        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("rezultati.txt", Context.MODE_PRIVATE));
+	        outputStreamWriter.write(data);
+	        outputStreamWriter.close();
+	    }
+	    catch (IOException e) {
+	        Log.e("Exception", "File write failed: " + e.toString());
+	    } 
 	}
 
 }
