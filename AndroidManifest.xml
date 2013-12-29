@@ -33,7 +33,10 @@
         </activity>
         <activity android:name="si.fri.ucenjecpp.InstructionsActivity" >
         </activity>
- 
+ 		<service android:enabled="true" android:name=".PredvajajCounter" />
+ 		<service android:enabled="true" android:name=".PredvajajPrav" />
+ 		<service android:enabled="true" android:name=".PredvajajNarobe" />
+        
     </application>
 
 </manifest>

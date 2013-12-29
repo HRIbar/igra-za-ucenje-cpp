@@ -18,6 +18,7 @@ public class StartActivity extends Activity{
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		try{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
 		
@@ -33,10 +34,14 @@ public class StartActivity extends Activity{
 
 		    @Override
 		    public void onClick(View v) {
+		    	
+		    	try{
 		         gumbStart.setBackgroundColor(color.white);
 		         Intent userActivity = new Intent(getApplicationContext(), InputUserActivity.class);
 		         startActivity(userActivity);
 		         finish();
+		    	}//try
+		    	catch(Exception e){e.printStackTrace();}
 		    }
 		});
 		
@@ -44,11 +49,13 @@ public class StartActivity extends Activity{
 
 		    @Override
 		    public void onClick(View v) {
-		    	
+		    	try{
 		    	// Fix the coloring of the button when pressed
 		         //gumbExit.setBackgroundColor(color.white);
 		         StartActivity.this.finish();
-		         
+		    	}
+		    	catch(Exception e){e.printStackTrace();}
+		    	
 		    }
 		});
 		
@@ -56,10 +63,13 @@ public class StartActivity extends Activity{
 
 		    @Override
 		    public void onClick(View v) {
+		    	try{
 		         //gumbScore.setBackgroundColor(color.white);
 		         Intent scoreActivity = new Intent(getApplicationContext(), ScoreActivity.class);
 		         startActivity(scoreActivity);
 		         finish();
+		    	}
+		    	catch(Exception e){e.printStackTrace();}
 		    }
 		});
 		
@@ -67,20 +77,28 @@ public class StartActivity extends Activity{
 
 		    @Override
 		    public void onClick(View v) {
+		    	try{
 		         //gumbScore.setBackgroundColor(color.white);
 		         Intent instruActivity = new Intent(getApplicationContext(),InstructionsActivity.class);
 		         startActivity(instruActivity);
 		         finish();
+		    	}
+		    	catch(Exception e){e.printStackTrace();}
 		    }
 		});
-		
+		}
+		catch(Exception e){e.printStackTrace();}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
+		try{
 		getMenuInflater().inflate(R.menu.start, menu);
+		}
+		catch(Exception e){e.printStackTrace();}
 		return true;
+		
+		
 	}
 	
 

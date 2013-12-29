@@ -56,7 +56,6 @@ public class IngameActivity extends Activity implements OnClickListener  {
 		/* Calling the inside class which calls run() 
 		 * function every 1000ms.
 		 */
-		
 		timerOne.schedule(new ProcessOne(), 0L, 1000L);
 		NastaviSliko();
 		
@@ -77,6 +76,10 @@ public class IngameActivity extends Activity implements OnClickListener  {
 		
 		case R.id.buttonA :
 			if(pravilen.equals("a")){
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajPrav.class));
+				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
 				adb.show();
@@ -92,12 +95,18 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			else{
 				String rezultatiText = readFromFile();
 				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
+				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-			adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
-			adb.show();
-			Intent i = new Intent(this, ScoreActivity.class);
-			startActivity(i);
-			finish();
+				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.show();
+				
+				
+				Intent i = new Intent(this, ScoreActivity.class);
+				startActivity(i);
+				finish();
 			
 			}
 			
@@ -105,6 +114,10 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			break;
 		case R.id.buttonB :
 			if(pravilen.equals("b")){
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajPrav.class));
+				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
 				adb.show();
@@ -120,12 +133,16 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			else{
 				String rezultatiText = readFromFile();
 				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
+				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-			adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
-			adb.show();
-			Intent i = new Intent(this, ScoreActivity.class);
-			startActivity(i);
-			finish();
+				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.show();
+				Intent i = new Intent(this, ScoreActivity.class);
+				startActivity(i);
+				finish();
 			//nastavi score TODO
 			}
 			
@@ -133,6 +150,10 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			
 		case R.id.buttonC :
 			if(pravilen.equals("c")){
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajPrav.class));
+				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
 				adb.show();
@@ -148,12 +169,17 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			else{
 				String rezultatiText = readFromFile();
 				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
+				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-			adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
-			adb.show();
-			Intent i = new Intent(this, ScoreActivity.class);
-			startActivity(i);
-			finish();
+				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.show();
+				
+				Intent i = new Intent(this, ScoreActivity.class);
+				startActivity(i);
+				finish();
 			//nastavi score TODO
 			}
 			
@@ -173,6 +199,8 @@ public class IngameActivity extends Activity implements OnClickListener  {
 		pravilen = Character.toString(imageArray[index].charAt(imageArray[index].length()-1)); //nastavi pravilen odgovr
 		int resID = getResources().getIdentifier(imageArray[index], "drawable",  getPackageName());
 		img.setImageResource(resID);
+		
+		startService(new Intent(getBaseContext(), PredvajajCounter.class)); //predvajaj mp3 counter
 		}
 		catch(Exception e){e.printStackTrace();}
 	}
@@ -260,6 +288,12 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			    		/* Here you add to switch to new activity
 			    		 * because the game is over - timeleft = 0!
 			    		 */
+			    		
+			    		
+			    		
+			    		stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+						startService(new Intent(getBaseContext(), PredvajajTimeout.class));
+						
 			    		AlertDialog("Vas cas je potekel\nGame Over :)"); //mogoce se komu to zdi primitivno?
 			    		String rezultatiText = readFromFile();
 						writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
