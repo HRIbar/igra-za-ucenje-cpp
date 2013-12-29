@@ -37,6 +37,7 @@ public class ScoreActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		try{
 		switch(v.getId()){
 		case R.id.button1:
 			Intent i = new Intent(this, StartActivity.class);
@@ -50,6 +51,8 @@ public class ScoreActivity extends Activity implements OnClickListener {
 			TextRezultati.setText("");
 		
 		}
+		}//try
+		catch(Exception e){e.printStackTrace();}
 		
 		
 	}

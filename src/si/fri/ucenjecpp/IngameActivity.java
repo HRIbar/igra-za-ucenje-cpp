@@ -69,7 +69,10 @@ public class IngameActivity extends Activity implements OnClickListener  {
 		return true;
 	}
 	
+	
+
 	public void onClick(View v) {
+		try{
 		switch(v.getId()){
 		
 		case R.id.buttonA :
@@ -157,17 +160,23 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			break;
 		
 		} //konec switch
-		
+		}
+		catch(Exception e){e.printStackTrace();}
 		
 	} //konec onClick
 	
+	
 	public void NastaviSliko(){
+		try{
 		ImageView img=(ImageView)findViewById(R.id.imageView1);
 		int index = rnd.nextInt(imageArray.length);
 		pravilen = Character.toString(imageArray[index].charAt(imageArray[index].length()-1)); //nastavi pravilen odgovr
 		int resID = getResources().getIdentifier(imageArray[index], "drawable",  getPackageName());
 		img.setImageResource(resID);
+		}
+		catch(Exception e){e.printStackTrace();}
 	}
+	
 	
 	private String readFromFile() {
 
@@ -200,11 +209,15 @@ public class IngameActivity extends Activity implements OnClickListener  {
 	}
 	
 	public void NovaAktivnost(Class cls){
+		try{
 		Intent i = new Intent(this, cls);
 		startActivity(i);
 		}
+		catch(Exception e){e.printStackTrace();}
+		}
 	
 	public void AlertDialog(String obvestilo){
+		try{
 		AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
 		adb.setTitle("Obvestilo").setCancelable(false).setPositiveButton("V redu", null).setMessage(obvestilo);
 		adb.show();
@@ -214,6 +227,8 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		}//try
+		catch(Exception e){e.printStackTrace();}
 		
 	}
 	
