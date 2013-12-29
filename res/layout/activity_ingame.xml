@@ -87,15 +87,6 @@
         android:text="@string/gumbB"
         android:onClick="onClick" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/vprasanje1b" />
-
     <Button
         android:id="@+id/buttonC"
         android:layout_width="wrap_content"
@@ -115,5 +106,13 @@
         android:layout_marginBottom="14dp"
         android:text="@string/gumbA"
         android:onClick="onClick" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/vprasanje1b" />
 
 </RelativeLayout>

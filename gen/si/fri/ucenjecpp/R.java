@@ -49,11 +49,11 @@ public final class R {
         public static final int button4=0x7f080013;
         public static final int buttonA=0x7f080008;
         public static final int buttonB=0x7f080007;
-        public static final int buttonC=0x7f08000a;
+        public static final int buttonC=0x7f080009;
         public static final int editTextNavodila=0x7f080012;
         public static final int editTextRezultati=0x7f080014;
         public static final int etVnosvzdevka=0x7f08000c;
-        public static final int imageView1=0x7f080009;
+        public static final int imageView1=0x7f08000a;
         public static final int sekunde=0x7f080005;
         public static final int textView1=0x7f080000;
         public static final int textView2=0x7f080003;
