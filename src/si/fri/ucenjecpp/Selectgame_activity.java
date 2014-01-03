@@ -42,14 +42,14 @@ public class Selectgame_activity extends Activity implements OnClickListener {
 				break;
 			
 			case R.id.button3:
-				Intent i3 = new Intent(this, Znaki_activity.class);
+				Intent i3 = new Intent(this, Krizisca_activity.class);
 				startActivity(i3);
 				finish();
 				
 				break;
 				
 			case R.id.button4:
-				Intent i4 = new Intent(this, Znaki_activity.class);
+				Intent i4 = new Intent(this, Avtocesta_activity.class);
 				startActivity(i4);
 				finish();
 				

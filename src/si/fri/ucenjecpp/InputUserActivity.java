@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,6 +21,7 @@ public class InputUserActivity extends Activity {
 		
 		gumbOK = (Button) findViewById(R.id.buOk);
 		vnosNick = (EditText) findViewById(R.id.etVnosvzdevka);
+		vnosNick.setImeOptions(EditorInfo.IME_ACTION_DONE);
 		
 		gumbOK.setOnClickListener(new View.OnClickListener() {
 

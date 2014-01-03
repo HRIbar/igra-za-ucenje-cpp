@@ -35,7 +35,10 @@ public class Znaki_activity extends Activity implements OnClickListener  {
 	String[] imageArray = {"znaki1a","znaki2c","znaki3b","znaki4a","znaki5c","znaki6c",
 			"znaki7b","znaki8a","znaki9b","znaki10c","znaki11b","znaki12b","znaki13a","znaki14a",
 			"znaki15b","znaki16a","znaki17b","znaki18a","znaki19c","znaki20c","znaki21a","znaki22b",
-			"znaki23a"}; //zadna crka predstavlja pravilen odgovor
+			"znaki23a","znaki24b","znaki25a","znaki26d","znaki27c","znaki28c","znaki29b","znaki30d",
+			"znaki31a","znaki32b","znaki33b","znaki34b","znaki35a","znaki36a","znaki37c","znaki38d",
+			"znaki39b","znaki40a","znaki41c","znaki42a","znaki43a","znaki44b","znaki45c","znaki46a",
+			"znaki47a","znaki48a","znaki49b","znaki50a","znaki51b"}; //zadna crka predstavlja pravilen odgovor
 	//ker se mi neda delat sezam terk ali kaj podobnega
 	Random rnd = new Random();
 	String pravilen;
