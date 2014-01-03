@@ -19,19 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF" />
 
-    <EditText
-        android:id="@+id/editTextNavodila"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tvInstruction"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:inputType="none" >
-
-        <requestFocus />
-    </EditText>
+    
 
     <ImageView
         android:id="@+id/imageView1"
@@ -76,5 +64,18 @@
         android:layout_alignTop="@+id/button4"
         android:layout_toRightOf="@+id/button2"
         android:text="@string/gumbC" />
+
+    <TextView
+        android:id="@+id/TextViewNavodila"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignRight="@+id/button4"
+        android:layout_below="@+id/tvInstruction"
+        android:ems="10"
+        android:textSize="12sp" >
+
+        <requestFocus />
+    </TextView>
 
 </RelativeLayout>

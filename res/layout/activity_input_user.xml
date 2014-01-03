@@ -30,6 +30,7 @@
         android:layout_marginTop="204dp"
         android:background="@drawable/lovingbuttons"
         android:textColor="#FFFFFF"
+        android:imeOptions="actionDone"
         android:ems="10" >
 
         <requestFocus />

@@ -31,6 +31,14 @@
         android:text="Clovek"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FFFFFF" />
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/vprasanje1b" />
 
     <TextView
         android:id="@+id/textView3"
@@ -106,13 +114,18 @@
         android:layout_marginBottom="14dp"
         android:text="@string/gumbA"
         android:onClick="onClick" />
-
-    <ImageView
-        android:id="@+id/imageView1"
+    
+    <Button
+        android:id="@+id/buttonD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/vprasanje1b" />
+        android:layout_alignBaseline="@+id/buttonC"
+        android:layout_alignBottom="@+id/buttonC"
+        android:layout_toRightOf="@+id/buttonC"
+        android:text="@string/gumbD"
+        android:onClick="onClick" />
+    
+
+    
 
 </RelativeLayout>

@@ -30,7 +30,7 @@ public class InputUserActivity extends Activity {
 		    	User.nickname = vnosNick.getText().toString();
 		    	User.points = 0;
 		    	
-		        Intent Ingame = new Intent(getApplicationContext(), IngameActivity.class);
+		        Intent Ingame = new Intent(getApplicationContext(), Selectgame_activity.class);
 		        startActivity(Ingame);
 		        finish();
 		        

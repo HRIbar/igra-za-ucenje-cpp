@@ -81,7 +81,7 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				startService(new Intent(getBaseContext(), PredvajajPrav.class));
 				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
 				adb.show();
 				
 				tocke = User.points;
@@ -100,7 +100,7 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
 				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
 				adb.show();
 				
 				
@@ -119,7 +119,7 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				startService(new Intent(getBaseContext(), PredvajajPrav.class));
 				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
 				adb.show();
 				
 				tocke = User.points;
@@ -138,7 +138,7 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
 				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
 				adb.show();
 				Intent i = new Intent(this, ScoreActivity.class);
 				startActivity(i);
@@ -155,7 +155,7 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				startService(new Intent(getBaseContext(), PredvajajPrav.class));
 				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
 				adb.show();
 				
 				tocke = User.points;
@@ -174,7 +174,7 @@ public class IngameActivity extends Activity implements OnClickListener  {
 				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
 				
 				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
-				adb.setTitle("Rezltat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
 				adb.show();
 				
 				Intent i = new Intent(this, ScoreActivity.class);
@@ -184,6 +184,46 @@ public class IngameActivity extends Activity implements OnClickListener  {
 			}
 			
 			break;
+			
+		case R.id.buttonD:
+if(pravilen.equals("d")){
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajPrav.class));
+				
+				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.pravilno);
+				adb.show();
+				
+				tocke = User.points;
+				tocke = tocke + 15;
+				User.points = tocke;
+				editTocke.setText(Integer.toString(User.points));
+				timeLeft = 30;
+				timerOne.schedule(new ProcessOne(), 0L, 1000L);
+				NastaviSliko();
+				}
+			else{
+				String rezultatiText = readFromFile();
+				writeToFile(rezultatiText +"\n"+nickname+" je dosegel: "+Integer.toString(tocke)+" tock");//shranimo tocke
+				
+				stopService(new Intent(getBaseContext(), PredvajajCounter.class));
+				startService(new Intent(getBaseContext(), PredvajajNarobe.class));
+				
+				AlertDialog.Builder adb = new AlertDialog.Builder(this, 3);
+				adb.setTitle("Rezultat").setCancelable(false).setPositiveButton("V redu", null).setMessage(R.string.narobe);
+				adb.show();
+				
+				Intent i = new Intent(this, ScoreActivity.class);
+				startActivity(i);
+				finish();
+			//nastavi score TODO
+			}
+			
+			
+			break;
+			
+		
 		
 		} //konec switch
 		}

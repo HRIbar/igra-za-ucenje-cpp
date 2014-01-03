@@ -9,8 +9,8 @@
         android:targetSdkVersion="14" />
 
     <application
-        android:debuggable="true"
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -33,10 +33,33 @@
         </activity>
         <activity android:name="si.fri.ucenjecpp.InstructionsActivity" >
         </activity>
- 		<service android:enabled="true" android:name=".PredvajajCounter" />
- 		<service android:enabled="true" android:name=".PredvajajPrav" />
- 		<service android:enabled="true" android:name=".PredvajajNarobe" />
-        
+
+        <service
+            android:name="si.fri.ucenjecpp.PredvajajCounter"
+            android:enabled="true" />
+        <service
+            android:name="si.fri.ucenjecpp.PredvajajPrav"
+            android:enabled="true" />
+        <service
+            android:name="si.fri.ucenjecpp.PredvajajNarobe"
+            android:enabled="true" />
+
+        <activity
+            android:name="si.fri.ucenjecpp.Selectgame_activity"
+            android:label="@string/title_activity_selectgame_activity" >
+        </activity>
+        <activity
+            android:name="si.fri.ucenjecpp.Znaki_activity"
+            android:label="@string/title_activity_znaki_activity" >
+        </activity>
+        <activity
+            android:name="si.fri.ucenjecpp.Krizisca_activity"
+            android:label="@string/title_activity_krizisca_activity" >
+        </activity>
+        <activity
+            android:name="si.fri.ucenjecpp.Avtocesta_activity"
+            android:label="@string/title_activity_avtocesta_activity" >
+        </activity>
     </application>
 
 </manifest>

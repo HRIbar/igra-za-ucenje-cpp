@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class InstructionsActivity extends Activity implements OnClickListener {
 
@@ -14,11 +14,11 @@ public class InstructionsActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_instructions);
-		EditText TextNavodila = (EditText) this.findViewById(R.id.editTextNavodila);
+		TextView TextNavodila = (TextView) this.findViewById(R.id.TextViewNavodila);
 		TextNavodila.setText("Crke ob sliki se navezujejo na crke na gumbih\n"+
-				"ce mislite da je pravilen odgovor ob keterem je crka A pritisnite gumb s crko A"+
-				"ce mislite da je pravilen odgovor ob keterem je crka B pritisnite gumb s crko B"+
-				"ce mislite da je pravilen odgovor ob keterem je crka C pritisnite gumb s crko C");
+				"ce mislite da je pravilen odgovor ob keterem je crka A pritisnite gumb s crko A "+
+				"ce mislite da je pravilen odgovor ob keterem je crka B pritisnite gumb s crko B "+
+				"ce mislite da je pravilen odgovor ob keterem je crka C pritisnite gumb s crko C ");
 	}
 
 	@Override
