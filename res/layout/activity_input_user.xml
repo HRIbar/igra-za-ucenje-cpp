@@ -31,7 +31,8 @@
         android:background="@drawable/lovingbuttons"
         android:textColor="#FFFFFF"
         android:imeOptions="actionDone"
-        android:ems="10" >
+        android:ems="10"
+        android:inputType="textImeMultiLine" >
 
         <requestFocus />
     </EditText>
